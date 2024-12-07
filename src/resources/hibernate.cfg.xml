@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/hibernate-configuration"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.hibernate.org/xsd/hibernate-configuration hibernate-configuration-3.0.xsd">
+
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jfsdexam</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Dama@1234</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+
+        <!-- Hibernate Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Show SQL in the console -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Update the database schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Entity class mapping -->
+        <mapping class="com.klef.jfsd.exam.hibernate_example.Customer"/>
+    </session-factory>
+</hibernate-configuration>
